@@ -57,19 +57,16 @@ params...
 with the following commands, you can start, stop and restart the fast-cgi:
 
 start:
-``
-service otrs-fcgi start
-``
+
+	root@otrs:~$ service otrs-fcgi start
 
 stop:
-``
-service otrs-fcgi stop
-``
+
+	root@otrs:~$ service otrs-fcgi stop
 
 restart:
-``
-service otrs-fcgi restart
-``
+
+	root@otrs:~$ service otrs-fcgi restart
 
 the following command add the start to autostart
 
