@@ -6,8 +6,8 @@
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: Start the Perl FastCGI daemon.
-### END INIT INFO 
-PERL_SCRIPT=/usr/bin/fastcgi-wrapper.pl
+### END INIT INFO
+PERL_SCRIPT=/usr/local/bin/fastcgi-wrapper.pl
 FASTCGI_USER=www-data
 RETVAL=0
 case "$1" in
@@ -31,5 +31,5 @@ case "$1" in
       echo "Usage: perl-fcgi {start|stop|restart}"
       exit 1
   ;;
-esac      
+esac
 exit $RETVAL

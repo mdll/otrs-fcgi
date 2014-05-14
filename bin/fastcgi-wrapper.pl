@@ -9,10 +9,10 @@ require 'syscall.ph';
 &daemonize;
 
 END() { } BEGIN() { }
-*CORE::GLOBAL::exit = sub { die "fakeexit\nrc=".shift()."\n"; }; 
-eval q{exit}; 
-if ($@) { 
-	exit unless $@ =~ /^fakeexit/; 
+*CORE::GLOBAL::exit = sub { die "fakeexit\nrc=".shift()."\n"; };
+eval q{exit};
+if ($@) {
+	exit unless $@ =~ /^fakeexit/;
 };
 
 &main;
@@ -34,7 +34,7 @@ sub main {
 
 sub request_loop {
         while( $request->Accept() >= 0 ) {
-            
+
            $stdin_passthrough ='';
            $req_len = 0 + $req_params{'CONTENT_LENGTH'};
            if (($req_params{'REQUEST_METHOD'} eq 'POST') && ($req_len != 0) ){ 
@@ -81,7 +81,7 @@ sub request_loop {
 			exec($req_params{SCRIPT_FILENAME});
 			die("exec failed");
 		}
-            } 
+            }
             else {
                 print("Content-type: text/plain\r\n\r\n");
                 print "Error: No such CGI app - $req_params{SCRIPT_FILENAME} may not exist or is not executable by this process.\n";
