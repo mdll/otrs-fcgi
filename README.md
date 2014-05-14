@@ -15,7 +15,7 @@ this command will install all packages needed on Ubuntu/Debian:
 
 this command will download configure otrs on local system. this sample will set following local settings:
 
-- HOMEDIR of otrs is /var/local/otrs (dynamic to version)
+- HOMEDIR of otrs is /opt/otrs (dynamic to version)
 - USER starting fast-cgi (per default, web-user)
 
 *Remember:* all calls for Ubuntu/Debian.
