@@ -12,7 +12,7 @@ FASTCGI_USER=www-data
 RETVAL=0
 case "$1" in
     start)
-      su - $FASTCGI_USER -c $PERL_SCRIPT
+      sudo -u $FASTCGI_USER -H $PERL_SCRIPT
       RETVAL=$?
       echo "otrs fast-cgi started."
   ;;
@@ -23,7 +23,7 @@ case "$1" in
   ;;
     restart)
       killall -9 fastcgi-wrapper.pl
-      su - $FASTCGI_USER -c $PERL_SCRIPT
+      sudo -u $FASTCGI_USER -H $PERL_SCRIPT
       RETVAL=$?
       echo "otrs fast-cgi restarted"
   ;;
