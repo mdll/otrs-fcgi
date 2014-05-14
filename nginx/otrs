@@ -1,14 +1,14 @@
 server {
 	listen *:80;
 	server_name HOSTNAME;
-	root /var/local/otrs/var/httpd/htdocs;
+	root /opt/otrs/var/httpd/htdocs;
 	index index.html;
-	
+
 	location /otrs-web {
 		gzip on;
-		alias /var/local/otrs/var/httpd/htdocs;
+		alias /opt/otrs/var/httpd/htdocs;
 	}
-	
+
 	location ~ ^/otrs/(.*\.pl)(/.*)?$ {
 		fastcgi_pass unix:/var/run/otrs/otrs.cgi.sock;
 		fastcgi_index index.pl;
