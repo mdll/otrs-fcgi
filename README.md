@@ -20,8 +20,8 @@ this command will download configure otrs on local system. this sample will set 
 
 *Remember:* all calls for Ubuntu/Debian.
 
-	root@otrs:~$ wget http://ftp.otrs.org/pub/otrs/otrs-3.x.x.tar.gz
 	root@otrs:~$ cd /opt/
+	root@otrs:~$ wget http://ftp.otrs.org/pub/otrs/otrs-3.x.x.tar.gz
 	root@otrs:~$ tar -xzf otrs-3.x.x.tar.gz
 	root@otrs:~$ ln -s otrs-3.x.x otrs
 	root@otrs:~$ cp otrs/Kernel/Config.pm.dist otrs/Kernel/Config.pm
